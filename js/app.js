@@ -33,3 +33,39 @@ function updateArea(e) {
         if (e.type !== 'draw.delete') alert("Use the draw tools to draw a polygon!");
     }
 }
+
+map.on('load', function(){
+    map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates":[
+                        [-91.873, 42.7600],
+                        [-91.8740, 42.7600],
+                        [-91.875, 42.761],
+                        [-91.877, 42.762],
+                        [-91.879,42.762],
+                        [-91.881,42.762],
+                        [-91.883,42.762]
+
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#888",
+            "line-width": 8
+        }
+    })
+
+});
